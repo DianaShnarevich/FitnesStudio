@@ -1,7 +1,6 @@
 package com.example.Fitnes.dao.entity;
 
 import com.example.Fitnes.core.dto.products.ProductDTO;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -11,6 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(schema = "app", name = "products")
+
 public class ProductEntity {
     @Id
     @GeneratedValue(generator = "UUID")
@@ -45,16 +45,17 @@ public class ProductEntity {
 
     }
 
+
     public ProductEntity(ProductDTO productDTO) {
         this.uuid = UUID.randomUUID();
         this.dtCreate = LocalDateTime.now();
         this.dtUpdate = LocalDateTime.now();
-        this.title = title;
-        this.weight = weight;
-        this.calories = calories;
-        this.proteins = proteins;
-        this.fats = fats;
-        this.carbohydrates = carbohydrates;
+        this.title = productDTO.getTitle();
+        this.weight = productDTO.getWeight();
+        this.calories = productDTO.getCalories();
+        this.proteins = productDTO.getProteins();
+        this.fats = productDTO.getFats();
+        this.carbohydrates = productDTO.getCarbohydrates();
     }
 
     @Override

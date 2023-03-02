@@ -46,7 +46,7 @@ public class UserEntity {
 
 
     @Column(name = "code")
-    private int verificationCode;
+    private int code;
 
     public UserEntity() {
     }
@@ -60,7 +60,7 @@ public class UserEntity {
         this.role = UserRole.USER;
         this.status = UserStatus.WAITING_ACTIVATION;
         this.password = userRegistrationDTO.getPassword();
-        this.verificationCode =  (int)  (Math.random() * 10000);
+        this.code =  (int)  (Math.random() * 10000);
     }
 
     public UserEntity(UserCreateDTO userCreateDTO) {

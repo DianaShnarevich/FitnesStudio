@@ -8,21 +8,20 @@ import com.example.Fitnes.service.api.IProductService;
 import java.util.List;
 
 public class ProductService implements IProductService {
-    private final IProductDao productDao;
+    private final IProductDao IProductDao;
 
-    public ProductService(IProductDao productDao) {
-        this.productDao = productDao;
+    public ProductService(IProductDao IProductDao) {
+        this.IProductDao = IProductDao;
     }
 
-    @Override
     public List<ProductEntity> getAll() {
         return null;
     }
 
     @Override
-    public boolean add(ProductDTO productDTO) {
+    public boolean save(ProductDTO productDTO) {
         ProductEntity entity = new ProductEntity(productDTO);
-        IProductDao.add(entity);
+        IProductDao.save(entity);
         return true;
     }
 

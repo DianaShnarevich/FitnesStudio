@@ -1,11 +1,17 @@
 package com.example.Fitnes.core.dto.products;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@ToString
+@EqualsAndHashCode
 public class ProductDTO {
     private UUID uuid = UUID.randomUUID();
     private LocalDateTime dtCreate;
@@ -16,18 +22,6 @@ public class ProductDTO {
     private double proteins;
     private double fats;
     private double carbohydrates;
-
-    public ProductDTO(UUID uuid, LocalDateTime dtCreate, LocalDateTime dtUpdate, String title, int weight, int calories, double proteins, double fats, double carbohydrates) {
-        this.uuid = uuid;
-        this.dtCreate = dtCreate;
-        this.dtUpdate = dtUpdate;
-        this.title = title;
-        this.weight = weight;
-        this.calories = calories;
-        this.proteins = proteins;
-        this.fats = fats;
-        this.carbohydrates = carbohydrates;
-    }
 
     public ProductDTO(String title, int weight, int calories, double proteins, double fats, double carbohydrates) {
         this.title = title;

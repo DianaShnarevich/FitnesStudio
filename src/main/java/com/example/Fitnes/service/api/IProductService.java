@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IProductService {
     List<ProductEntity> getAll();
-    boolean add(ProductDTO productDTO);
+    boolean save(ProductDTO productDTO);
 }

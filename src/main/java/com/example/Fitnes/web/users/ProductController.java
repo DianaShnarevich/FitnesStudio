@@ -20,7 +20,7 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<UUID> add(@Valid @RequestBody ProductDTO product) {
-        service.add(product);
+        service.save(product);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
