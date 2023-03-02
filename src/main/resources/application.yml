@@ -1,0 +1,8 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/fitnes
+    username: postgres
+    password: 103406709
